@@ -81,6 +81,10 @@ pipeline {
                 }
             }
 
+            environment {
+                CI_ENVIRONMENT_URL = ''
+            }
+
             steps {
                 sh '''
                     npm install netlify-cli node-jq
@@ -116,7 +120,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = ''
+                CI_ENVIRONMENT_URL = 'https://unique-biscotti-72ecba.netlify.app'
             }
 
             steps {
