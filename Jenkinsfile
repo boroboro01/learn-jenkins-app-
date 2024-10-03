@@ -116,7 +116,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'https://unique-biscotti-72ecba.netlify.app'
+                CI_ENVIRONMENT_URL = ''
             }
 
             steps {
