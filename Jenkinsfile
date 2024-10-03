@@ -18,7 +18,6 @@ pipeline {
                     npm run build
                     ls -la
                 '''
-                echo 'Hello World'
             }
         }
 
@@ -66,6 +65,21 @@ pipeline {
                         }
                     }
                 }
+            }
+        }
+
+        stage('Deploy') {
+            agent {
+                docker {
+                    image 'node:20.17.0-alpine3.20'
+                    reuseNode true
+                }
+            }
+            steps {
+                sh '''
+                    npm install netlify-cli
+                    node_modules/.bin/netlify --version
+                '''
             }
         }
     }
